@@ -1,0 +1,127 @@
+---
+layout: default
+---
+
+<article class="post">
+  <section class="bg-light" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Blog</h2>
+            <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
+          </div>
+        </div>
+        <div class="row">
+          {% for news in site.categories.blog %}
+            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+            <!-- <li>
+              {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+              <span class="post-meta">{{ news.date | date: date_format }}</span>
+
+              <h2>
+                <a class="post-link" href="{{ news.url | relative_url }}">{{ news.title | escape }}</a>
+              </h2>
+            </li> -->
+            <div class="col-md-4 col-sm-6 portfolio-item">
+              <a class="portfolio-link" data-toggle="modal" href="{{ news.url | relative_url }}">
+                <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                    <p>{{ news.description | escape }}</p>
+                  </div>
+                </div>
+                <img class="img-fluid" src="{{ news.img-url | relative_url }}" alt="">
+              </a>
+              <div class="portfolio-caption">
+                <h4>{{ news.title | escape }}</h4>
+                <p class="text-muted">{{ news.date | date: date_format }}</p>
+              </div>
+            </div>
+          {% endfor %}
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <p>Opis</p>
+                </div>
+              </div>
+              <img class="img-fluid" src="{{ "/assets/images/portfolio/01-thumbnail.jpg" | relative_url }}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>Post 1</h4>
+              <p class="text-muted">Data</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <p>Opis</p>
+                </div>
+              </div>
+              <img class="img-fluid" src="{{ "/assets/images/portfolio/02-thumbnail.jpg" | relative_url }}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>Post 2</h4>
+              <p class="text-muted">Data</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <p>Opis</p>
+                </div>
+              </div>
+              <img class="img-fluid" src="{{ "/assets/images/portfolio/03-thumbnail.jpg" | relative_url }}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>Post 3</h4>
+              <p class="text-muted">Data</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <p>Opis</p>
+                </div>
+              </div>
+              <img class="img-fluid" src="{{ "/assets/images/portfolio/04-thumbnail.jpg" | relative_url }}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>Post 4</h4>
+              <p class="text-muted">Data</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <p>Opis</p>
+                </div>
+              </div>
+              <img class="img-fluid" src="{{ "/assets/images/portfolio/05-thumbnail.jpg" | relative_url }}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>Post 5</h4>
+              <p class="text-muted">Data</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+              <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                  <p>Opis</p>
+                </div>
+              </div>
+              <img class="img-fluid" src="{{ "/assets/images/portfolio/06-thumbnail.jpg" | relative_url }}" alt="">
+            </a>
+            <div class="portfolio-caption">
+              <h4>Post 6</h4>
+              <p class="text-muted">Data</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</article>

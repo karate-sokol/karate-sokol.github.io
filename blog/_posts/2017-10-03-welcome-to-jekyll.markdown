@@ -1,6 +1,8 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "BLOG!"
+description: "Krótki opis"
+img-url: "/assets/images/portfolio/01-thumbnail.jpg"
 date:   2017-10-02 00:18:32 +0200
 categories: jekyll update
 ---
