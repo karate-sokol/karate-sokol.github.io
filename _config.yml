@@ -10,3 +10,13 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      navbar: "defaultNavbar.html"
+
+# Livereload plugin
+livereload: true

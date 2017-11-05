@@ -1,46 +1,25 @@
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/bootstrap.min.css" | relative_url }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/app.bundle.css" | relative_url }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/landing-page.css" | relative_url }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/agency.css" | relative_url }}"/>
-  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/one-page-wonder.css" | relative_url }}"/>
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+<link rel="stylesheet" type="text/css" href="{{ "/assets/css/bootstrap.min.css" | relative_url }}"/>
+<link rel="stylesheet" type="text/css" href="{{ "/assets/css/app.bundle.css" | relative_url }}"/>
+<link rel="stylesheet" type="text/css" href="{{ "/assets/css/landing-page.css" | relative_url }}"/>
+<link rel="stylesheet" type="text/css" href="{{ "/assets/css/agency.css" | relative_url }}"/>
+<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+<!--<link rel="stylesheet" type="text/css" href="{{ "/assets/css/one-page-wonder.css" | relative_url }}"/>-->
 
-  <script type="text/javascript" src="{{ "/assets/js/jquery.min.js" | relative_url }}"></script>
-  <script type="text/javascript" src="{{ "/assets/js/npm.bundle.js" | relative_url }}"></script>
-  <script type="text/javascript" src="{{ "/assets/js/app.bundle.js" | relative_url }}"></script>
-  <script>
-    function initMap() {
-      var uluru = {lat: 50.059395, lng: 19.931838};
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
-        center: uluru
-      });
-      var marker = new google.maps.Marker({
-        position: uluru,
-        map: map
-      });
+<script type="text/javascript" src="{{ "/assets/js/jquery.min.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/npm.bundle.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/app.bundle.js" | relative_url }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/mapInit.js" | relative_url  }}"></script>
 
-      var uluru2 = {lat: 50.0665472, lng: 19.9030851};
-      var map2 = new google.maps.Map(document.getElementById('piastowska'), {
-        zoom: 15,
-        center: uluru2
-      });
-      var marker2 = new google.maps.Marker({
-        position: uluru2,
-        map: map2
-      });
-    }
-  </script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH1KbheV5C8k1D181-yMys-k1JRNc-PEo&callback=initMap">
-  </script>
-</head>
+
+<!--TODO: Uncomment this. Commented Just to load faster!-->
+<!--<script async defer-->
+        <!--src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH1KbheV5C8k1D181-yMys-k1JRNc-PEo&callback=initMap">-->
+<!--</script>-->

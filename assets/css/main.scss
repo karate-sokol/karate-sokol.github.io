@@ -1,0 +1,120 @@
+---
+---
+
+$extra-navbar-height: 100vh;
+$transition-times: 400ms;
+$transition-curve: ease-in-out;
+
+#extraNavbar {
+  position: relative;
+  z-index: -1;
+
+  background: url("/assets/images/navbar_bait.jpg");
+
+  /* Image is centered vertically and horizontally at all times */
+  background-position: center center;
+
+  /* Image doesn't repeat */
+  background-repeat: no-repeat;
+
+  /* Makes the image fixed in the viewport so that it doesn't move when
+     the content height is greater than the image height */
+  background-attachment: fixed;
+
+  /* This is what makes the background image rescale based on its container's size */
+  background-size: cover;
+
+  /* Pick a solid background color that will be displayed while the background image is loading */
+  background-color: #B5B5AD;
+
+  height: $extra-navbar-height;
+  width: 100%;
+}
+
+#extraNavbar {
+
+  @media (min-width: 900px) {
+    .navbar-fancy {
+      background: none;
+      height: 4em;
+      color: #ffffff;
+    }
+
+    .navbar {
+      .container {
+        width: 70%;
+      }
+    }
+
+    .navbar {
+      -webkit-transition: background-color $transition-times $transition-curve;
+      -moz-transition: background-color $transition-times $transition-curve;
+      -o-transition: background-color $transition-times $transition-curve;
+      -ms-transition: background-color $transition-times $transition-curve;
+      transition: background-color $transition-times $transition-curve;
+    }
+
+    .navbar-default {
+      -webkit-transition: background-color $transition-times $transition-curve;
+      -moz-transition: background-color $transition-times $transition-curve;
+      -o-transition: background-color $transition-times $transition-curve;
+      -ms-transition: background-color $transition-times $transition-curve;
+      transition: background-color $transition-times $transition-curve;
+    }
+
+  }
+
+  @media (max-width: 899px) {
+    .navbar-fancy {
+      margin-top: 0;
+      padding-top: 0;
+      background-color: #222 !important;
+      border-color: #080808;
+      color: #777;
+    }
+  }
+
+  .navbar {
+    z-index: 10000;
+  }
+
+
+  .navbar-default {
+    margin-top: 0;
+    padding-top: 0;
+    background-color: #222 !important;
+    border-color: #080808;
+  }
+
+
+  .navbar-fixed-top {
+    border: none;
+  }
+
+  .navbar-fancy .navbar-brand {
+    color: #ffffff;
+  }
+
+  .navbar-fancy .navbar-nav > li > a {
+    color: #ffffff;
+    padding-bottom: 10px;
+  }
+
+  .navbar-fancy .navbar-nav > li > a:focus,
+  .navbar-fancy .navbar-nav > li > a:hover {
+    color: #ffffff;
+    border-bottom: 3px solid #ffffff;
+  }
+
+}
+
+
+#extraNavbarOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: $extra-navbar-height;
+  width: 100%;
+  opacity: 0.6;
+  background-color: #4a4a4a;
+}

@@ -1,0 +1,45 @@
+<div id="extraNavbar">
+
+    <div id="extraNavbarOverlay"></div>
+
+    <div id="extraNavbarWrapper">
+        <nav class="navbar navbar-fancy navbar-fixed-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+
+                {% assign default_paths = site.pages | map: "path" %}
+                {% assign page_paths = site.header_pages | default: default_paths %}
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+                    </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse pull-right">
+                    <ul class="nav navbar-nav">
+                        {% for path in page_paths %}
+                        {% assign my_page = site.pages | where: "path", path | first %}
+                        {% if my_page.title %}
+                        <li>
+                            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape}}</a>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+
+</div>
