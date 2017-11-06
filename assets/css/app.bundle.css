@@ -1,8 +1,7 @@
-/*TODO: Uncomment thi! Commented to load faster*/
-
-/*@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);@import url(http://fonts.googleapis.com/css?family=Roboto:400,500);.fb {*/
-  /*padding: 4px !important;*/
-/*}*/
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500);.fb {
+  padding: 4px !important;
+}
 
 .container {
   width: 90%;
