@@ -4,20 +4,27 @@ $transition-curve: ease-in-out;
 
 $links-padding: 10px;
 
+// Default navbar settings
 .navbar {
-  font-size: 16px;
-  height: 50px;
+  text-align: center;
+}
 
-  .navbar-nav {
-    float: right;
-  }
+// Default expanded navbar settings
+@media (min-width: 768px) {
+  .navbar {
+    height: 50px;
 
-  .container-fluid {
-    width: 90%;
+    .navbar-nav {
+      float: right;
+    }
+
+    .container-fluid {
+      width: 90%;
+    }
   }
 }
 
-
+// Extra navbar settings
 #extraNavbar {
   position: relative;
   background: url("/assets/images/karate-bait.jpg");
@@ -35,7 +42,7 @@ $links-padding: 10px;
   height: $extra-navbar-height;
   width: 100%;
 
-  @media (min-width: 900px) {
+  @media (min-width: 950px) {
     .navbar-fancy {
       border: none;
       color: #ffffff;
@@ -70,8 +77,6 @@ $links-padding: 10px;
     }
 
     .navbar {
-      //font-size: 16px;
-
       -webkit-transition: all $transition-times $transition-curve;
       -moz-transition: all $transition-times $transition-curve;
       -o-transition: all $transition-times $transition-curve;
@@ -82,7 +87,6 @@ $links-padding: 10px;
         width: 80%;
       }
     }
-
   }
 
   .navbar {
