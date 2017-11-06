@@ -4,32 +4,36 @@ $transition-curve: ease-in-out;
 
 $links-padding: 10px;
 
+.navbar {
+  font-size: 16px;
+  height: 50px;
+
+  .navbar-nav {
+    float: right;
+  }
+
+  .container-fluid {
+    width: 90%;
+  }
+}
+
+
 #extraNavbar {
   position: relative;
-
   background: url("/assets/images/karate-bait.jpg");
-
   /* Image is centered vertically and horizontally at all times */
   background-position: center center;
-
   /* Image doesn't repeat */
   background-repeat: no-repeat;
-
   /* Makes the image fixed in the viewport so that it doesn't move when
      the content height is greater than the image height */
   background-attachment: fixed;
-
   /* This is what makes the background image rescale based on its container's size */
   background-size: cover;
-
   /* Pick a solid background color that will be displayed while the background image is loading */
   background-color: #b57c2e;
-
   height: $extra-navbar-height;
   width: 100%;
-}
-
-#extraNavbar {
 
   @media (min-width: 900px) {
     .navbar-fancy {
@@ -66,9 +70,7 @@ $links-padding: 10px;
     }
 
     .navbar {
-      font-size: 16px;
-      //padding-top: 5px;
-      height: 50px;
+      //font-size: 16px;
 
       -webkit-transition: all $transition-times $transition-curve;
       -moz-transition: all $transition-times $transition-curve;
@@ -87,29 +89,29 @@ $links-padding: 10px;
     border-bottom: none;
     text-align: center;
   }
-}
 
-#extraNavbarOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: $extra-navbar-height;
-  width: 100%;
-  opacity: 0.5;
-  background-color: #2a434a;
-}
-
-.inspirational-quote {
-  color: #ffffff;
-  position: absolute;
-  top: $extra-navbar-height / 2;
-  text-align: center;
-  width: 100%;
-  margin-top: -20px;
-
-  small {
-    display: block;
-    padding-top: 20px;
+  .inspirational-quote {
     color: #ffffff;
+    position: absolute;
+    top: $extra-navbar-height / 2;
+    text-align: center;
+    width: 100%;
+    margin-top: -20px;
+
+    small {
+      display: block;
+      padding-top: 20px;
+      color: #ffffff;
+    }
+  }
+
+  #extraNavbarOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $extra-navbar-height;
+    width: 100%;
+    opacity: 0.5;
+    background-color: #2a434a;
   }
 }
