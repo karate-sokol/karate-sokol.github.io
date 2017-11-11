@@ -2,7 +2,7 @@ $(document).ready(function () {
 
   var $window = $(window);
 
-  function extraNavbar() {
+  (function extraNavbar() {
     var $navWrapper = $("#extraNavbarWrapper");
     var $nav = $("#extraNavbar").find(".navbar");
     var stickyNavTop = 0;
@@ -20,9 +20,6 @@ $(document).ready(function () {
       }
     });
 
-  }
-
-  extraNavbar();
-
+  })();
 
 });
