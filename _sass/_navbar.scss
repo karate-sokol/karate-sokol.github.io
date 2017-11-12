@@ -1,0 +1,121 @@
+$extra-navbar-height: 100vh;
+$transition-times: 400ms;
+$transition-curve: ease-in-out;
+
+$links-padding: 10px;
+
+// Default navbar settings
+.navbar {
+  text-align: center;
+}
+
+// Default expanded navbar settings
+@media (min-width: 768px) {
+  .navbar {
+    height: 50px;
+
+    .navbar-nav {
+      float: right;
+    }
+
+    .container-fluid {
+      width: 90%;
+    }
+  }
+}
+
+// Extra navbar settings
+#extraNavbar {
+  position: relative;
+  background: url("/assets/images/karate-bait.jpg");
+  /* Image is centered vertically and horizontally at all times */
+  background-position: center center;
+  /* Image doesn't repeat */
+  background-repeat: no-repeat;
+  /* Makes the image fixed in the viewport so that it doesn't move when
+     the content height is greater than the image height */
+  background-attachment: fixed;
+  /* This is what makes the background image rescale based on its container's size */
+  background-size: cover;
+  /* Pick a solid background color that will be displayed while the background image is loading */
+  background-color: #b57c2e;
+  height: $extra-navbar-height;
+  width: 100%;
+
+  @media (min-width: 950px) {
+    .navbar-fancy {
+      border: none;
+      color: #ffffff;
+      height: 100px;
+      padding-top: 15px;
+      background: none;
+
+      -webkit-transition: all $transition-times $transition-curve;
+      -moz-transition: all $transition-times $transition-curve;
+      -o-transition: all $transition-times $transition-curve;
+      -ms-transition: all $transition-times $transition-curve;
+      transition: all $transition-times $transition-curve;
+
+      .navbar-nav > li > a, .navbar-brand {
+        color: #ffffff;
+        padding-bottom: .5em;
+
+      }
+
+      .navbar-nav > li > a:hover, .navbar-brand:hover {
+        border-bottom: 1px solid #ffffff;
+      }
+    }
+
+    .navbar-nav {
+      float: right;
+
+      li {
+        padding-left: $links-padding;
+        padding-right: $links-padding;
+      }
+    }
+
+    .navbar {
+      -webkit-transition: all $transition-times $transition-curve;
+      -moz-transition: all $transition-times $transition-curve;
+      -o-transition: all $transition-times $transition-curve;
+      -ms-transition: all $transition-times $transition-curve;
+      transition: all $transition-times $transition-curve;
+
+      .container-fluid {
+        width: 80%;
+      }
+    }
+  }
+
+  .navbar {
+    border-bottom: none;
+    text-align: center;
+  }
+
+  .inspirational-quote {
+    color: #ffffff;
+    position: absolute;
+    top: $extra-navbar-height / 2;
+    text-align: center;
+    width: 100%;
+    margin-top: -20px;
+
+    small {
+      display: block;
+      padding-top: 20px;
+      color: #ffffff;
+    }
+  }
+
+  #extraNavbarOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $extra-navbar-height;
+    width: 100%;
+    opacity: 0.5;
+    background-color: #2a434a;
+  }
+}

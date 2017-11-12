@@ -1,0 +1,60 @@
+---
+layout: page0
+title: Blog
+permalink: /blog/
+list:
+  -
+    title: Post 1
+    thumbnail: 01-thumbnail.jpg
+  -
+    title: Post 2
+    thumbnail: 02-thumbnail.jpg
+  -
+    title: Post 3
+    thumbnail: 03-thumbnail.jpg
+  -
+    title: Post 4
+    thumbnail: 04-thumbnail.jpg
+  -
+    title: Post 5
+    thumbnail: 05-thumbnail.jpg
+  -
+    title: Post 6
+    thumbnail: 06-thumbnail.jpg
+---
+<div id="portfolio">
+{% for news in site.categories.blog %}
+  {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+  <div class="col-md-4 col-sm-6 portfolio-item">
+    <a class="portfolio-link" data-toggle="modal" href="{{ news.url | relative_url }}">
+      <div class="portfolio-hover">
+        <div class="portfolio-hover-content">
+          <p>{{ news.description | escape }}</p>
+        </div>
+      </div>
+      <img class="img-fluid" src="{{ news.img-url | relative_url }}" alt="">
+    </a>
+    <div class="portfolio-caption">
+      <h4>{{ news.title | escape }}</h4>
+      <p class="text-muted">{{ news.date | date: date_format }}</p>
+    </div>
+  </div>
+{% endfor %}
+
+{% for entry in page.list %}
+  <div class="col-md-4 col-sm-6 portfolio-item">
+    <a class="portfolio-link" data-toggle="modal">
+      <div class="portfolio-hover">
+        <div class="portfolio-hover-content">
+          <p>Opis</p>
+        </div>
+      </div>
+      <img class="img-fluid" src="/assets/images/portfolio/{{ entry.thumbnail | relative_url }}" alt="">
+    </a>
+    <div class="portfolio-caption">
+      <h4>{{ entry.title }}</h4>
+      <p class="text-muted">Data</p>
+    </div>
+  </div>
+{% endfor %}
+</div>
