@@ -1,0 +1,19 @@
+---
+layout: page
+title: Aktualności
+permalink: /news/
+---
+<h1 class="page-heading">Posts</h1>
+
+<ul class="post-list">
+  {% for news in site.categories.news %}
+    <li>
+      {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+      <span class="post-meta">{{ news.date | date: date_format }}</span>
+
+      <h2>
+        <a class="post-link" href="{{ news.url | relative_url }}">{{ news.title | escape }}</a>
+      </h2>
+    </li>
+  {% endfor %}
+</ul>
