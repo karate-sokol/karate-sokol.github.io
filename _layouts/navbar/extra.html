@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<header>
+  <script type="text/javascript" src="{{ "/assets/js/extraNavbar.js" | relative_url }}"></script>
+  <div id="extraNavbar">
+    <div id="extraNavbarOverlay"></div>
+    {% include navbar.html %}
+    <div class="inspirational-quote">
+      <h1>Osiemdziesiąc procent sukcesu to przyjść<small>Woody Allen</small></h1>
+    </div>
+  </div>
+</header>
+
+<main class="page-content" aria-label="Content">
+  {{ content }}
+</main>
