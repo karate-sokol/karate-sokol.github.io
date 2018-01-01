@@ -2,7 +2,31 @@
 layout: default
 ---
 <header>
-  <script type="text/javascript" src="{{ "/assets/js/extraNavbar.js" | relative_url }}"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var $window = $(window)
+      var $nav = $('nav')
+      var stickyNavTop = 0
+      var fancyClass = 'navbar-fancy'
+
+      var updateNavClass = function () {
+        if ($window.scrollTop() > stickyNavTop) {
+          $nav.removeClass(fancyClass)
+        } else {
+          $nav.addClass(fancyClass)
+        }
+      }
+
+      $window.on('resize', function () {
+        stickyNavTop = $nav.offset().top;
+      });
+
+      $window.on('scroll', updateNavClass)
+
+      updateNavClass()
+    });
+  </script>
+
   <div id="extraNavbar">
     <div id="extraNavbarOverlay"></div>
     {% include navbar.html %}

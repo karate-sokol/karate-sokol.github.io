@@ -1,0 +1,60 @@
+---
+layout: page
+title: Gdzie
+permalink: /where/
+---
+
+<style>
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+
+#piastowska {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+</style>
+
+<div class="row">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Mapy dojazdowe</h4>
+      <p class="card-text">
+        Szkoła Podstawowa nr 4, ul. Smoleńsk 5
+        <div id="map"></div>
+        </br>
+        Studium Wychowania Fizycznego i Sportu, ul. Piastowska 26a
+        <div id="piastowska"></div>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function initMap() {
+    var uluru = {lat: 50.059395, lng: 19.931838};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+
+    var uluru2 = {lat: 50.0665472, lng: 19.9030851};
+    var map2 = new google.maps.Map(document.getElementById('piastowska'), {
+      zoom: 15,
+      center: uluru2
+    });
+    var marker2 = new google.maps.Marker({
+      position: uluru2,
+      map: map2
+    });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDH1KbheV5C8k1D181-yMys-k1JRNc-PEo&callback=initMap">
+</script>

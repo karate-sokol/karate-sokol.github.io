@@ -1,0 +1,180 @@
+<div class="row text-center">
+  <h3>Co robimy na treningach?</h2>
+</div>
+
+<div class="row text-center">
+  <div class="col-md-4 desc">
+    Modus operandi karate to uderzenia i kopnięcia. Wyróżnia się trzy strefy: gedan (niskie), chuudan (średnie), joudan (wysokie).
+  </div>
+  <div class="col-md-8 activity">
+    <img src="{{ "/assets/images/high_kick.jpg" | relative_url }}" alt="wallpaper"/>
+  </div>
+
+  <div class="col-md-4 desc">
+    Trzeba przygotować się do ćwiczeń. Rozgrzać stawy, rozciągnąć mięśnie.
+  </div>
+  <div class="col-md-8 activity">
+    <img src="{{ "/assets/images/strech_black.jpg" | relative_url }}"/>
+  </div>
+
+  <div class="col-md-4 desc">
+    W sobotę jest trening walk. Bloki, uniki, kombinacje ciosów. Wszytko idzie w ruch. Karate to nie trening samoobrony, ale uczy jak właściwie zareagować na nadciągające uderzenie.
+  </div>
+  <div class="col-md-8 activity">
+    <img src="{{ "/assets/images/fight_kick.jpg" | relative_url }}" alt="sobota kwiecień 2017"/>
+  </div>
+
+  <div class="col-md-4 desc">
+    Ćwiczenia w parach szlifują technikę. Właściwą postawę, kierunek i wysokość uderzenia.
+  </div>
+  <div class="col-md-8 activity">
+    <img src="{{ "/assets/images/hi5.jpg" | relative_url }}" alt="praca w parach ;)"/>
+  </div>
+
+  <div class="col-md-4 desc">
+    Oprócz bloków i ciosów w karate bardzo istotne są "kata". Każde jest choreografią bloków, ciosów i postaw. Łączą poszczególne elementy w spójną całość, tworząc tym samym sztukę karate.
+  </div>
+  <div class="col-md-8 activity">
+    <img src="{{ "/assets/images/zenkutsu.jpg" | relative_url }}" alt="zenkutsu dachi"/>
+  </div>
+
+  <div class="col-md-4 desc">
+    Obozy karate to regularnie organizowane wyjazdy na kilkudniowy trening wraz z egzaminen. Kluczowe doświadczenie dla każdego karateki. Okazja do wykazania się umiejętnościami.
+  </div>
+  <div class="col-md-8 activity">
+    <img src="{{ "/assets/images/camp.jpg" | relative_url }}" alt="obóz maj 2017"/>
+  </div>
+
+  <div class="col-md-4 desc">
+    Dla nas zwykłe pompki to za mało. Rozgrzewka obejmuje kreatywne ćwiczenia poruszające różne aspekty sprawności fizycznej; równowagę, koordynację, rozciągnięcie, siłę. To trzeba przeżyć.
+  </div>
+  <div class="col-md-8 activity">
+    <img src="{{ "/assets/images/on_hands.jpg" | relative_url }}" alt="stanie na rękach"/>
+  </div>
+</div>
+
+<div id="modal">
+  <span class="close">×</span>
+  <img class="content">
+  <div class="caption"/>
+</div>
+
+<script type="text/javascript">
+  var images = $('div.activity img')
+  var modal = $('#modal')
+  var closeButton = modal.children('.close')[0]
+  var modalImg = modal.children('img')[0]
+  var captionText = modal.children('div')[0]
+  modal = modal[0]
+  var closeModal = function() {
+      modal.style.display = 'none'
+  }
+
+  function initModalForImage(img) {
+    img.onclick = function() {
+      modal.style.display = 'block'
+      modalImg.src = this.src
+      captionText.innerHTML = this.alt
+    }
+  }
+
+  closeButton.onclick = closeModal
+  images.each(function(index) {
+    initModalForImage(this)
+  })
+
+  var escape = 27
+  $(document).keyup(function(e) {
+    if (e.keyCode === escape) {
+      closeModal()
+    }
+  });
+</script>
+
+<style type="text/css">
+  div.desc {
+    text-align: right;
+  }
+  div.activity img {
+    width: 300px;
+  }
+  div.activity img:hover {opacity: 0.7;}
+
+  /* The Modal (background) */
+  div#modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+
+  /* Modal Content (image) */
+  div#modal .content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+
+  /* Caption of Modal Image */
+  div#modal .caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+
+  /* Add Animation */
+  div#modal .content, div.modal .caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+
+  @-webkit-keyframes zoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+  }
+
+  @keyframes zoom {
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
+  }
+
+  /* The Close Button */
+  div#modal .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  div#modal .close:hover,
+  div#modal .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+    div.modal .content {
+      width: 100%;
+    }
+  }
+</style>
