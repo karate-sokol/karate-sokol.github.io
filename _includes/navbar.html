@@ -4,9 +4,15 @@
     {% assign default_paths = site.pages | map: "path" %}
     {% assign page_paths = site.header_pages | default: default_paths %}
 
+    <style type="text/css">
+      a.page-link {
+        font-weight: bolder;
+      }
+    </style>
+
     <div class="navbar-header">
       <div class="navbar-header">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+        <a class="navbar-brand page-link" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
       </div>
     </div>
 

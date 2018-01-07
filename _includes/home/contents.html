@@ -1,54 +1,56 @@
+{% assign desc = 'col-md-4 col-md-offset-2 desc' %}
+{% assign image = 'col-md-6 activity' %}
+
 <div class="row text-center">
   <h2>Co robimy na treningach?</h2>
 </div>
-
-<div class="row text-center">
-  <div class="col-md-4 desc">
+<div class="row">
+  <div class="{{ desc }}">
     Modus operandi karate to uderzenia i kopnięcia. Wyróżnia się trzy strefy: gedan (niskie), chuudan (średnie), joudan (wysokie).
   </div>
-  <div class="col-md-8 activity">
+  <div class="{{ image }}">
     <img src="{{ "/assets/images/high_kick.jpg" | relative_url }}" alt="wallpaper"/>
   </div>
 
-  <div class="col-md-4 desc">
+  <div class="{{ desc }}">
     Trzeba przygotować się do ćwiczeń. Rozgrzać stawy, rozciągnąć mięśnie.
   </div>
-  <div class="col-md-8 activity">
+  <div class="{{ image }}">
     <img src="{{ "/assets/images/strech_black.jpg" | relative_url }}"/>
   </div>
 
-  <div class="col-md-4 desc">
+  <div class="{{ desc }}">
     W sobotę jest trening walk. Bloki, uniki, kombinacje ciosów. Wszytko idzie w ruch. Karate to nie trening samoobrony, ale uczy jak właściwie zareagować na nadciągające uderzenie.
   </div>
-  <div class="col-md-8 activity">
+  <div class="{{ image }}">
     <img src="{{ "/assets/images/fight_kick.jpg" | relative_url }}" alt="sobota kwiecień 2017"/>
   </div>
 
-  <div class="col-md-4 desc">
+  <div class="{{ desc }}">
     Ćwiczenia w parach szlifują technikę. Właściwą postawę, kierunek i wysokość uderzenia.
   </div>
-  <div class="col-md-8 activity">
+  <div class="{{ image }}">
     <img src="{{ "/assets/images/hi5.jpg" | relative_url }}" alt="praca w parach ;)"/>
   </div>
 
-  <div class="col-md-4 desc">
+  <div class="{{ desc }}">
     Oprócz bloków i ciosów w karate bardzo istotne są "kata". Każde jest choreografią bloków, ciosów i postaw. Łączą poszczególne elementy w spójną całość, tworząc tym samym sztukę karate.
   </div>
-  <div class="col-md-8 activity">
+  <div class="{{ image }}">
     <img src="{{ "/assets/images/zenkutsu.jpg" | relative_url }}" alt="zenkutsu dachi"/>
   </div>
 
-  <div class="col-md-4 desc">
+  <div class="{{ desc }}">
     Obozy karate to regularnie organizowane wyjazdy na kilkudniowy trening wraz z egzaminen. Kluczowe doświadczenie dla każdego karateki. Okazja do wykazania się umiejętnościami.
   </div>
-  <div class="col-md-8 activity">
+  <div class="{{ image }}">
     <img src="{{ "/assets/images/camp.jpg" | relative_url }}" alt="obóz maj 2017"/>
   </div>
 
-  <div class="col-md-4 desc">
+  <div class="{{ desc }}">
     Dla nas zwykłe pompki to za mało. Rozgrzewka obejmuje kreatywne ćwiczenia poruszające różne aspekty sprawności fizycznej; równowagę, koordynację, rozciągnięcie, siłę. To trzeba przeżyć.
   </div>
-  <div class="col-md-8 activity">
+  <div class="{{ image }}">
     <img src="{{ "/assets/images/on_hands.jpg" | relative_url }}" alt="stanie na rękach"/>
   </div>
 </div>
@@ -96,6 +98,8 @@
     text-align: right;
   }
   div.activity img {
+    margin-left: 0px;
+    margin-right: auto;
     width: 300px;
   }
   div.activity img:hover {opacity: 0.7;}

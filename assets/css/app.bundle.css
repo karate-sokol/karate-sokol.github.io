@@ -25,3 +25,7 @@
 section {
   padding-top: 50px;
 }
+
+body {
+  background-color: #f2f2f2 !important;
+}
